@@ -1,0 +1,20 @@
+#page-case {
+	.blk_01 {
+		#titleArea {
+			h1 {
+				padding: 24px 0 72px 0;
+				@include bp(medium) {
+					padding: 48px 0 96px 0;
+				}
+			}
+
+			#headerBackground {
+				div:last-child {
+					> span {
+		  				display: none;
+		  			}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+* {
+	@include box-sizing(border-box);
+}
+
+body {
+	background: $grey4;
+}
+.hide_mobile {
+	display: none;
+	@include bp(medium) {
+		display: block;
+	}
+}
+.content_wrapper {
+	position: relative;
+}

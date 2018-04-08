@@ -1,0 +1,23 @@
+#page-about-ieef {
+	
+	.blk_05 {
+		display: none;
+	}
+
+	@include bp(medium) {
+		.mod_05 .container ul li {
+			width: 25%;
+		}
+	}
+
+	@include bp(large) {
+		h2 {
+			width: 100%;
+			margin-left: 0;
+		}
+		.big_blocks {
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+}

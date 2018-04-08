@@ -1,0 +1,59 @@
+.mod_13 {
+	
+	@include bp(large) {
+		padding: 0 40px;
+	}
+
+	.container {
+
+		> div {
+			@include bp(medium) {
+				padding: 0 16px;
+			}
+
+			@include bp(large) {
+				@include span(10);
+				@include isolate(1);
+			}
+			> div {
+				background: white;
+				margin-top: $section-spacer;
+				padding: 16px;
+				@include shadow-down;
+
+				@include bp(medium) {
+					margin-top: $section-spacer-medium;
+					padding: 32px;
+				}
+
+				h2 {
+					margin-top: 0;
+					margin-bottom: 8px;
+					padding: 0;
+					@include bp(large) {
+						width: 100%;
+						margin-left: 0;
+					}
+				}
+				p {
+					margin-bottom: $block-spacer;
+					@include bp(medium) {
+						margin-bottom: $block-spacer-medium;
+					}
+				}
+				> div {
+					width: 100%;
+					@include bp(large) {
+						width: 79.661%;
+						margin: 0 auto;
+					}
+					> div {
+						width: 100%;
+						background-repeat: no-repeat;
+						background-size: 100%;
+					}
+				}
+			}
+		}
+	}
+}

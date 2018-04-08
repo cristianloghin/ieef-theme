@@ -1,0 +1,26 @@
+Blocks
+
+blk_01 -- home page header // includes: mod_01, mod_02
+blk_02 -- homepage news // includes: mod_03
+blk_03 -- homepage blocks // includes: mod_04
+blk_04 -- page footer // includes: mod_01
+blk_05 -- people block // include: mod_10
+
+Modules
+
+mod_01 -- main menu
+mod_02 -- page intro text block // includes: (?)com_01
+mod_03 -- homepage news item
+mod_04 -- image, text and link block (home block, case study) // includes: com_01
+mod_05 -- Tablet and desktop sub-menu module
+mod_06 -- Mobile sub-menu module
+mod_07 -- Team Member module
+mod_08 -- List Module
+mod_09 -- Leading Text Module // includes (?)com_01
+mod_10 -- People module // includes: (?)com_03
+
+Components
+
+com_01 -- button style 1 (gray outline)
+com_02 -- button style 2 (big blue button)
+com_03 -- email/phone button

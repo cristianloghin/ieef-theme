@@ -1,0 +1,83 @@
+.blk_02 {
+	margin-top: $section-spacer;
+	position: relative;
+
+	@include bp(medium) {
+		margin-top: $section-spacer-medium;
+	}
+
+	@include bp(large) {
+		padding: 0 40px;
+	}
+
+	.container {
+		position: relative;
+		padding: 0 32px;
+
+		@include bp(medium) {
+			padding: 0 40px;
+			@include clear_fix;
+		}
+
+		@include bp(large) {
+			padding: 0;
+		}
+
+		> div:first-child {
+
+			position: relative;
+
+			h2 {
+				margin-bottom: $h2-spacer;
+				@include bp(medium) {
+					margin-bottom: $h2-spacer-medium;
+					padding-left: $gutter-medium / 2;
+				}
+				@include bp(large) {
+					padding-left: $gutter-large / 2;
+				}
+			}
+			h2 + a {
+				position: absolute;
+				top: 0;
+				right: 0;
+				text-decoration: none;
+				color: $blue1;
+				font-family: 'Roboto', sans-serif;
+				font-size: 14px;
+				line-height: 24px;
+				font-weight: 300;
+
+				@include bp(medium) {
+					right: 16px;
+					font-size: 16px;
+					line-height: 32px;
+				}
+
+				@include bp(large) {
+					right: 8px;
+				}
+
+				span {
+					display: block;
+					height: 100%;
+					background: white;
+					padding: 0 12px;
+				}
+			}
+		}
+	}
+
+	
+	.mod_03 {
+		@include bp(medium) {
+			@include span(4);
+		}
+	}
+	.mod_03 + .mod_03 {
+		margin-top: $h2-spacer;
+		@include bp(medium) {
+			margin-top: 0;
+		}
+	}
+}

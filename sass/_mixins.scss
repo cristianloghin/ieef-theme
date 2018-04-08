@@ -1,0 +1,69 @@
+$blue1: #00a0dd;
+$blue2: #0080a8;
+$grey1: #4c4e52;
+$grey2: #b2b5b6;
+$grey3: #8a8c8d;
+$grey4: #eaeaea;
+$green1: #79b700;
+
+@mixin bp($point) {
+  
+  @if $point == medium {
+    @media (min-width: 600px) { @content; }
+  }
+
+  @if $point == large {
+    @media (min-width: 1000px) { @content; }
+  }
+}
+
+$footer-spacer: 48px;
+$section-spacer: 32px;
+$block-spacer: 16px;
+$h2-spacer: 12px;
+
+$footer-spacer-medium: 72px;
+$section-spacer-medium: 48px;
+$h2-spacer-medium: 24px;
+$block-spacer-medium: 24px;
+$gutter-medium: 32px;
+
+$gutter-large: 16px;
+
+@mixin shadow-down {
+	@include box-shadow(rgba(0, 0, 0, .3) 0px 2px 0px);
+}
+
+@mixin shadow-in {
+  @include box-shadow(inset rgba(0, 0, 0, .15) 0px -3px 0px);
+}
+
+@mixin shadow-up {
+	@include box-shadow(rgba(0, 0, 0, .3) 0px -2px 0px);
+}
+
+
+
+@mixin transition($time) {
+  @include transition-property(all);
+  @include transition-duration($time);
+  @include transition-timing-function(ease-out);
+}
+
+@mixin force_h_render {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
+
+@mixin clear_fix {
+  &:before,
+  &:after {
+      content: " "; /* 1 */
+      display: table; /* 2 */
+  }
+
+  &:after {
+      clear: both;
+  }
+}

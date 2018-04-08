@@ -1,0 +1,491 @@
+.blk_01 {
+	position: relative;
+	z-index: 10;
+	#logoMenu {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 5;
+		width: 100%;
+		margin-top: 32px;
+		padding: 0 16px;
+
+		@include bp(medium) {
+			margin-top: 40px;
+		}
+
+		@include bp(large) {
+			padding: 0 40px;
+		}
+		
+		#headerLogo {
+			width: 84px;
+			height: 48px;
+
+			float: left;
+
+			@include bp(medium) {
+				width: 356px;
+				height: 72px;
+			}
+
+			@include bp(large) {
+				padding-left: $gutter-large/2;
+				float: none;
+			}
+
+			span {
+				width: 100%;
+				height: 100%;
+				display: block;
+				background-image: url('../img/logo-header-category.png');
+				background-repeat: no-repeat;
+
+				background-size: 100%;
+
+				@include bp(medium) {
+					background-image: url('../img/logo-header-category-2.png');
+				}
+				@include bp(large) {
+					background-image: url('../img/logo-header-default-2.png');
+				}
+			}
+		}
+		#menuOpen {
+			width: 48px;
+			height: 48px;
+			
+			float: right;
+			background-color: white;
+
+			cursor: pointer;
+
+			@include shadow-down;
+
+			@include bp(medium) {
+				width: 72px;
+				height: 72px;
+			}
+
+			@include bp(large) {
+				display: none;
+			}
+
+			span {
+				width: 100%;
+				height: 100%;
+				font-size: 24px;
+
+				display: block;
+				text-align: center;
+				line-height: 48px;
+				color: $blue1;
+
+				@include bp(medium) {
+					font-size: 36px;
+					line-height: 72px;
+				}
+			}
+		}
+	}
+	
+	#titleArea {
+		padding-top: 112px;
+		position: relative;
+
+		@include bp(medium) {
+			padding-top: 152px;
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+
+		@include bp(large) {
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+
+		h1 {
+			border-top: 1px solid white;
+			color: white;
+			padding: 24px 0 48px 0;
+			text-align: center;
+
+			@include bp(medium) {
+				padding: 48px 0 80px 0;
+			}
+
+			@include bp(large) {
+				border: none;
+				margin-top: 64px;
+			}
+		}
+
+		#headerBackground {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			height: 100%;
+			width: 100%;
+
+			div:last-child {
+
+				height: 100%;
+				width: 100%;
+				$svg-gradient-shim-threshold: 1 !global;
+	  			@include background-image(linear-gradient(to right, $blue1, $green1));
+
+	  			position: relative;
+
+	  			> span {
+	  				display: block;
+	  				position: absolute;
+	  				bottom: 0;
+	  				left: 0;
+	  				width: 100%;
+	  				height: 24px;
+	  				padding: 0 16px;
+
+	  				@include bp(medium) {
+	  					height: 32px;
+	  					padding: 0 24px;
+	  				}
+
+	  				@include bp(large) {
+	  					padding: 0 48px;
+	  				}
+
+	  				> span {
+	  					display: block;
+	  					height: 100%;
+	  					width: 100%;
+	  					background-color: $grey4;
+
+	  					@include bp(large) {
+	  						max-width: 1136px;
+	  						margin: 0 auto;
+	  					}
+	  				}
+	  			}
+
+				@include bp(large) {
+					
+					position: relative;
+
+					$svg-gradient-shim-threshold: 1 !global;
+	  				@include background-image(linear-gradient(to right, $blue1, $green1));
+
+	  				&:before {
+	  					content: '';
+	  					display: block;
+	  					width: 100%;
+	  					height: 152px;
+	  					background-color: white;
+
+	  					position: absolute;
+	  					top: 0;
+
+	  					z-index: 2;
+	  				}
+				}
+			}
+		}
+	}
+}
+
+body.home {
+	.blk_01 {
+		#logoMenu {
+			#headerLogo {
+				width: 198px;
+				height: 120px;
+				float: none;
+				margin: 0 auto 20px auto;
+
+				@include bp(medium) {
+					width: 356px;
+					height: 72px;
+					float: left;
+					margin: 0;
+				}
+
+				@include bp(large) {
+					float: none;
+				}
+
+				span {
+					background-image: url('../img/logo-header-home.png');
+					@include bp(medium) {
+						background-image: url('../img/logo-header-home-2.png');
+					}
+				}
+			}
+			#menuOpen {
+				float: none;
+				margin: 0 auto;
+				@include bp(medium) {
+					float: right;
+					margin: 0;
+				}
+			}
+		}
+		
+		#titleArea {
+			padding-top: 356px;
+
+			@include bp(medium) {
+				padding-top: 432px;
+			}
+
+			@include bp(large) {
+				padding-top: 576px;
+			}
+
+			#headerBackground {
+				
+				padding-bottom: 24px;
+
+				@include bp(medium) {
+					padding-bottom: 104px;
+				}
+
+				#imageBanner {
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1;
+					height: 100%;
+					width: 100%;
+					padding-bottom: 56px;
+
+					@include bp(medium) {
+						padding-bottom: 136px;
+					}
+
+					> span {
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 4;
+						width: 100%;
+						height: 216px;
+						$svg-gradient-shim-threshold: 1 !global;
+	  					@include background-image(linear-gradient(rgba(25, 35, 75, .8), transparent));
+					}
+
+					> div {
+						position: relative;
+						height: 100%;
+						width: 100%;
+
+						span {
+							height: 100%;
+							width: 100%;
+							position: absolute;
+							top: 0;
+							left: 0;
+							opacity: 1;
+							display: block;
+							background-repeat: no-repeat;
+							background-position: center;
+							@include background-size(cover);
+
+							@include transition(.3s);
+							@include force_h_render;
+						}
+					}
+				}
+				div:last-child {
+					height: 100%;
+					width: 100%;
+					$svg-gradient-shim-threshold: 1 !global;
+	  				@include background-image(linear-gradient(to right, $blue1, $green1));
+
+	  				> span {
+	  					display: none;
+	  				}
+
+	  				@include bp(large) {
+	  					margin-top: 0;
+	  					&:before {
+	  						display: none;
+	  					}
+	  				}
+				}
+			}
+		}
+	}
+}
+
+body.category, body.subpage {
+	.blk_01 {
+		#logoMenu {
+			#headerLogo {
+				span {
+					background-image: url('../img/logo-header-category.png');
+					@include bp(medium) {
+						background-image: url('../img/logo-header-category-2.png');
+					}
+					@include bp(large) {
+						background-image: url('../img/logo-header-default-2.png');
+					}
+				}
+			}
+			#menuOpen {
+				float: right;
+			}
+		}
+		#titleArea {
+			
+			h1 {
+				color: white;
+				border-color: white;
+				padding: 24px 0;
+
+				@include bp(medium) {
+					padding: 48px 0;
+				}
+			}
+
+			#headerBackground {
+
+				padding-bottom: 24px;
+
+				@include bp(medium) {
+					padding-bottom: 32px;
+				}
+
+				@include bp(large) {
+					padding-bottom: 64px;
+				}
+
+				div:last-child {
+					height: 100%;
+					width: 100%;
+					$svg-gradient-shim-threshold: 1 !global;
+	  				@include background-image(linear-gradient(to right, $blue1, $green1));
+
+	  				> span {
+	  					display: none;
+	  				}
+
+	  				@include bp(large) {
+	  					margin-top: 0;
+
+	  					&:before {
+	  						top: 0;
+	  					}
+	  				}
+				}
+			}
+		}
+	}
+}
+
+body.cases {
+	.blk_01 {
+
+		#logoMenu {
+			#headerLogo {
+				span {
+					background-image: url('../img/logo-header-category.png');
+					@include bp(medium) {
+						background-image: url('../img/logo-header-category-2.png');
+					}
+					@include bp(large) {
+						background-image: url('../img/logo-header-default-2.png');
+					}
+				}
+			}
+			#menuOpen {
+				float: right;
+			}
+		}
+
+		#titleArea {
+			padding-top: 192px;
+
+			@include bp(medium) {
+				padding-top: 384px;
+			}
+
+			@include bp(large) {
+				padding-top: 516px;
+			}
+
+			#headerBackground {
+				
+
+				#caseBanner {
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1;
+					height: 100%;
+					width: 100%;
+
+					span:first-child {
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 4;
+						width: 100%;
+						height: 216px;
+						$svg-gradient-shim-threshold: 1 !global;
+	  					@include background-image(linear-gradient(rgba(25, 35, 75, .8), transparent));
+
+	  					@include bp(large) {
+	  						display: none;
+	  					}
+					}
+
+					span:last-child {
+						width: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 264px;
+						opacity: 1;
+						display: block;
+						background-repeat: no-repeat;
+						background-position: center;
+						@include background-size(cover);
+
+						@include bp(medium) {
+							height: 480px;
+						}
+
+						@include bp(large) {
+							height: 476px;
+							top: 152px;
+						}
+					}
+				}
+				div:last-child {
+					height: 100%;
+					width: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 296px;
+					$svg-gradient-shim-threshold: 1 !global;
+	  				@include background-image(linear-gradient(to right, $blue1, $green1));
+
+	  				> span {
+	  					display: none;
+	  				}
+
+	  				@include bp(medium) {
+						height: 512px;
+					}
+
+	  				@include bp(large) {
+	  					height: 508px;
+	  				}
+				}
+			}
+		}
+	}
+}

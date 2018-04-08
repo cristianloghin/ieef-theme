@@ -1,0 +1,136 @@
+#page-applications {
+
+	section {
+
+		@include bp(large) {
+			padding: 0 40px;
+			padding-top: $section-spacer-medium;
+		}
+
+		.container {
+
+			> div {
+				padding-top: $section-spacer - 24px;
+				padding-left: 16px;
+				padding-right: 16px;
+
+				@include bp(medium) {
+					border-top: none;
+					position: relative;
+
+					padding-top: $section-spacer-medium - 32px;
+					
+				}
+
+				@include bp(large) {
+					
+					@include span(10);
+					@include isolate(1);
+
+					&:before {
+						display: none;
+					}
+				}
+
+				> div:last-child {
+					margin-top: 24px;
+					@include bp(large) {
+						margin-top: 32px;
+					}
+					.download {
+						@include shadow-down;
+						margin-bottom: 24px;
+
+						@include bp(large) {
+							margin-bottom: 32px;
+						}
+
+						a {
+							display: block;
+							padding: 16px;
+							background-color: white;
+							color: $grey1;
+							text-decoration: none;
+
+							font-family: 'Roboto', sans-serif;
+							font-size: 20px;
+							font-weight: 300;
+
+							text-align: center;
+
+							@include transition(.3s);
+
+							@include bp(medium) {
+								padding: 24px;
+							}
+
+							@include bp(large) {
+								padding: 32px;
+								font-size: 28px;
+
+							}
+
+							span:first-child {
+								color: $green1;
+								font-size: 24px;
+
+								@include bp(large) {
+									font-size: 32px;
+								}
+
+								&:before {
+									margin-left: 0;
+								}
+								
+							}
+
+							&:hover {
+								background-color: $grey1;
+								color: white;
+							}
+						}
+					}
+				}
+
+				h2 {
+					margin-bottom: $h2-spacer;
+				}
+				p + h2 {
+					margin-top: $section-spacer;
+				}
+				h3 {
+					margin-bottom: 8px;
+				}
+				p + h3, ul + h3 {
+					margin-top: 16px;
+				}
+				ul {
+					li {
+						font-family: 'Roboto', sans-serif;
+						font-size: 14px;
+						line-height: 18px;
+						color: $grey1;
+						font-weight: 300;
+						padding-left: 12px;
+
+						@include bp(medium) {
+							font-size: 16px;
+							line-height: 20px;
+						}
+
+						&:before {
+							content: '\e802';
+							display: inline-block;
+							font-family: "icons-ieef";
+							font-style: normal;
+							font-weight: normal;
+							margin-left: -12px;
+							margin-right: 7px;
+							color: $green1;
+						} 
+					}
+				}
+			}
+		}
+	}
+}

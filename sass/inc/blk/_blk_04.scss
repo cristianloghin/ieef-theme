@@ -1,0 +1,229 @@
+.blk_04 {
+	margin-top: $footer-spacer;
+	background: white;
+	position: relative;
+	padding-top: 44px;
+
+	@include bp(medium) {
+		margin-top: $footer-spacer-medium;
+		padding-top: 48px;
+		padding-bottom: 48px;
+	}
+
+	@include bp(large) {
+		padding: 48px 40px;
+	}
+
+	.container {
+		padding: 0;
+		@include bp(medium) {
+			padding: 0 40px;
+		}
+		@include bp(large) {
+			padding: 0;
+			position: relative;
+		}
+	}
+
+	#backTop {
+		position: absolute;
+		top: -24px;
+		left: 50%;
+		margin-left: -24px;
+		background: white;
+		width: 48px;
+		height: 48px;
+		text-align: center;
+		@include border-radius(24px);
+		@include shadow-down;
+
+		cursor: pointer;
+
+		@include transition(.3s);
+
+		@include bp(medium) {
+			width: 72px;
+			height: 72px;
+			top: -36px;
+			left: auto;
+			right: 56px;
+			margin-left: 0;
+			@include border-radius(36px);
+		}
+
+		@include bp(large) {
+			right: 8px;
+			top: -84px;
+		}
+
+		span {
+			color: $grey2;
+			font-size: 24px;
+			line-height: 48px;
+
+			@include bp(medium) {
+				font-size: 36px;
+				line-height: 72px;
+			}
+		}
+
+		&:hover {
+			background-color: $green1;
+			span {
+				color: white;
+			}
+		}
+	}
+
+	#footerLogo {
+		@include bp(medium) {
+			@include span(6);
+			height: 72px;
+			a {
+				display: block;
+				height: 72px;
+				width: 100%;
+				max-width: 252px;
+
+				span {
+					display: block;
+					width: 100%;
+					height: 100%;
+					background-image: url('../img/logo-footer.png');
+					background-size: 100%;
+					background-repeat: no-repeat;
+				}
+			}
+		}
+		@include bp(large) {
+			@include span(4);
+		}
+	}
+
+	#extraInformation {
+		
+		background-color: $grey4;
+
+		@include bp(medium) {
+			width: 100%;
+			position: absolute;
+			pointer-events: none;
+			bottom: 48px;
+			left: 0;
+			background-color: transparent;
+		}
+
+		@include bp(large) {
+			position: relative;
+			pointer-events: auto;
+			bottom: auto;
+			left: auto;
+			padding-top: 32px;
+		}
+		
+		.container {
+
+			position: relative;
+
+			> div {
+				pointer-events: auto;
+			}
+
+			> div:first-child {
+				border-bottom: 1px solid white;
+				padding: 16px 0;
+
+				@include bp(medium) {
+					@include span(6);
+					border: none;
+				}
+
+				@include bp(large) {
+					@include isolate(4);
+				}
+
+				p {
+					text-align: center;
+
+					@include bp(medium) {
+						text-align: left;
+						border-bottom: 1px solid $grey4;
+						padding-bottom: 8px;
+					}
+
+					@include bp(large) {
+						border-top: 1px solid $grey4;
+						border-bottom: none;
+						padding: 0;
+						line-height: 32px;
+					}
+
+					a {
+						display: inline-block;
+						padding: 0 8px;
+						text-decoration: none;
+						color: $grey3;
+						@include bp(medium) {
+							padding: 0 8px 0 0;
+							font-size: 12px;
+						}
+					}
+				}
+			}
+			> div:nth-child(2) {
+				padding: 16px 0 0 0;
+				@include bp(medium) {
+					@include span(6);
+					clear: left;
+				}
+				@include bp(large) {
+					@include span(4);
+					clear: none;
+					position: absolute;
+				}
+				p {
+					text-align: center;
+					@include bp(medium) {
+						text-align: left;
+						font-size: 12px;
+						padding-top: 8px;
+					}
+
+					@include bp(large) {
+						border-top: 1px solid $grey4;
+						padding: 0;
+						line-height: 32px;
+					}
+				}
+			}
+			> div:last-child {
+				padding: 0 0 16px 0;
+				@include bp(medium) {
+					@include span(6);
+					clear: left;
+				}
+				@include bp(large) {
+					@include span(2);
+					clear: none;
+				}
+				p {
+					text-align: center;
+					@include bp(medium) {
+						font-size: 12px;
+						text-align: left;
+					}
+					@include bp(large) {
+						border-top: 1px solid $grey4;
+						padding: 0;
+						line-height: 32px;
+					}
+					a {
+						text-decoration: none;
+						color: $grey3;
+						font-weight: 700;
+					}
+				}
+			}
+		}
+	}
+}

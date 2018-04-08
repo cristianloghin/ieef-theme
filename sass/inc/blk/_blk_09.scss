@@ -1,0 +1,135 @@
+.blk_09 {
+	@include bp(medium) {
+		padding: 0 16px;	
+	}
+
+	@include bp(large) {
+		padding: 0 40px;
+	}
+	.container {
+		
+		> div:first-child {
+			
+			@include bp(large) {
+				padding: 0 8px;
+			}
+
+			> div {
+
+				padding: 8px 16px 24px 16px;
+				border-bottom: 1px solid $grey2;
+				margin-bottom: 24px;
+
+				position: relative;
+
+				@include bp(medium) {
+					padding: 16px 0 32px 0;
+					margin-bottom: 32px;
+				}
+
+				.date {
+					padding-bottom: 16px;
+					@include bp(large) {
+						width: 66.1972%;
+						margin: 0 auto;
+					}
+				}
+				.content {
+					
+					@include bp(large) {
+						width: 66.1972%;
+						margin: 0 auto;
+					}
+
+					h1 {
+						color: $blue1;
+						font-family: 'Roboto Slab', serif;
+						font-size: 20px;
+						line-height: 24px;
+						text-transform: none;
+
+						@include bp(medium) {
+							font-size: 22px;
+							line-height: 26px;
+						}
+					}
+					h2 {
+						color: $grey1;
+						font-size: 18px;
+						line-height: 20px;
+						@include bp(medium) {
+							font-size: 20px;
+							line-height: 24px;
+						}
+					}
+
+					p + p, h1 + p, h2 + p, p + ul, ul + p {
+						margin-top: 16px;
+						@include bp(large) {
+							margin-top: 20px;
+						}
+					}
+					p + h1, p + h2 {
+						margin-top: 24px;
+						@include bp(large) {
+							margin-top: 26px;
+						}
+					}
+
+					ul {
+						li {
+							font-family: 'Roboto', sans-serif;
+							font-size: 14px;
+							line-height: 18px;
+							color: $grey1;
+							font-weight: 300;
+							padding-left: 12px;
+
+							@include bp(medium) {
+								font-size: 16px;
+								line-height: 20px;
+							}
+
+							&:before {
+								content: '\e802';
+								display: inline-block;
+								font-family: "icons-ieef";
+								font-style: normal;
+								font-weight: normal;
+								margin-left: -12px;
+								margin-right: 7px;
+								color: $green1;
+							} 
+						}
+					}
+					p + ul, h3 + p, h3 + ul {
+						margin-top: 8px;
+					}
+					ul + h3, p + h3 {
+						margin-top: 16px;
+					}
+				}
+			}
+			
+		}
+		> div:last-child {
+			padding: 0 16px;
+			
+			@include bp(medium) {
+				padding: 0;
+				.com_03 {
+					width: 50%;
+					padding-right: 16px;
+				}
+			}
+			
+			@include bp(large) {
+				@include span(3);
+				.com_03 {
+					width: 100%;
+					padding-right: 0;
+				}
+			}
+		}
+	}
+}

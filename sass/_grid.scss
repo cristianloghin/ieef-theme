@@ -1,0 +1,29 @@
+.container {
+	max-width: 1152px;
+	margin: auto;
+	padding: 0 16px;
+	@include bp(medium) {
+		padding: 0 40px;
+	}
+
+	@include bp(large) {
+		padding: 0;
+	}
+
+	@include clear_fix;
+}
+
+@mixin span( $columns ) {
+	width: 100% / 12 * $columns;
+	float: left;
+	@include bp(medium) {
+		padding: 0 $gutter-medium / 2;
+	}
+	@include bp(large) {
+		padding: 0 $gutter-large / 2;
+	}
+}
+
+@mixin isolate( $columns ) {
+	margin-left: 100% / 12 * $columns;
+}

@@ -1,0 +1,64 @@
+.mod_15:first-child {
+	margin-top: $section-spacer - 24px;
+	@include bp(medium) {
+		margin-top: $section-spacer-medium - 32px;
+	}
+	@include bp(large) {
+		margin-top: 48px;
+	}
+}
+.mod_15 {
+	
+	margin-top: $section-spacer;
+
+	@include bp(medium) {
+		margin-top: $section-spacer-medium;
+	}
+
+	@include bp(large) {
+		padding: 0 40px;
+	}
+	.container {
+		> div {
+			padding: 0 16px;
+			position: relative;
+
+			@include bp(medium) {
+				padding: 0;
+			}
+
+			@include bp(large) {
+				@include span(8);
+				@include isolate(2);
+			}
+
+			.small, h2 {
+				@include bp(medium) {
+					padding: 0 16px;
+				}
+				@include bp(large) {
+					padding: 0;
+				}
+			}
+			
+			p:not(.small) {
+				padding: $block-spacer 0;
+				@include bp(medium) {
+					padding: $block-spacer-medium / 2 16px $block-spacer-medium 16px;
+				}
+				@include bp(large) {
+					padding: $block-spacer-medium / 2 0 $block-spacer-medium 0;
+				}
+			}
+			.com_01 {
+				@include bp(medium) {
+					@include span(4);
+				}
+				@include bp(large) {
+					width: 23.4042%;
+					padding: 0;
+				}	
+			}
+		}
+	}	
+}

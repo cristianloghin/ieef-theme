@@ -1,0 +1,157 @@
+.mod_16 {
+
+	@include bp(medium) {
+		padding: 0 16px;
+	}
+
+	@include bp(large) {
+		display: table-cell;
+		width: 33.33333%;
+		height: 100%;
+		vertical-align: top;
+		padding: 0 8px;
+	}
+
+	> div {
+		
+		background: white;
+		position: relative;
+
+		@include shadow-down;
+
+		@include bp(medium) {
+			width: 100%;
+			display: table;
+		}
+
+		@include bp(large) {
+			display: block;
+			height: 100%;
+			position: relative;
+		}
+		.photo {
+			
+			height: 176px;
+			width: 100%;
+
+			@include bp(medium) {
+				width: 50%;
+				display: table-cell;
+				vertical-align: top;
+				padding-right: 16px;
+			}
+
+			@include bp(large) {
+				height: 200px;
+				display: block;
+				width: 100%;
+				padding: 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 2;
+			}
+			span {
+				display: block;
+				width: 100%;
+				height: 100%;
+				background-repeat: no-repeat;
+				background-position: center;
+				@include background-size(cover);
+			}
+		}
+
+		.content {
+
+			padding: 16px;
+
+			@include bp(medium) {
+				display: table-cell;
+				width: 50%;
+				vertical-align: top;
+				padding: 32px 32px 32px 16px;
+			}
+
+			@include bp(large) {
+				display: block;
+				width: 100%;
+				height: 100%;
+				padding: 224px 16px 24px 16px;
+				position: relative;
+			}
+
+			.text {
+
+				h2 {
+					padding-bottom: $h2-spacer;
+					text-align: center;
+					@include bp(medium) {
+						text-align: left;
+					}
+					@include bp(large) {
+						text-align: center;
+					}
+				}
+				p {
+					text-align: center;
+					@include bp(medium) {
+						text-align: left;
+					}
+					@include bp(large) {
+						text-align: center;
+					}
+				}
+			}
+
+			.links {
+				
+				margin-top: 16px;
+				
+				@include bp(medium) {
+					padding: 0;
+
+					margin-top: 24px;
+
+					.com_01 {
+
+						@include bp(large) {
+							width: 176px;
+							position: absolute;
+							bottom: 32px;
+							left: 50%;
+							margin-left: -88px;
+						}
+						
+						> div {
+							a {
+								display: inline-block;
+								width: auto;
+								padding-left: 16px;
+								padding-right: 8px;
+								@include bp(large) {
+									display: block;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	& + .mod_16 {
+		margin-top: $block-spacer;
+		@include bp(medium) {
+			margin-top: 24px;
+		}
+	}
+}
+.mod_16.details {
+	> div {
+		.content {
+			@include bp(large) {
+				padding-bottom: 80px;
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+#page-investment-focus {
+	.mod_08 {
+		margin-top: $block-spacer;
+		@include bp(medium) {
+			margin-top: $block-spacer-medium;
+		}
+	}
+
+}

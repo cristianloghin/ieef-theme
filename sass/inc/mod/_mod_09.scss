@@ -1,0 +1,36 @@
+.mod_09 {
+	padding: 0 16px;
+
+	@include bp(medium) {
+		padding: 0;
+	}
+
+	@include bp(large) {
+		padding: 0 40px;
+	}
+
+	p {
+		@include bp(medium) {
+			padding: 0 16px;
+		}
+
+		@include bp(large) {
+			@include span(10);
+			@include isolate(1);
+		}
+	}
+
+	p + .com_01 {
+		margin-top: $block-spacer;
+
+		@include bp(medium) {
+			margin-top: $block-spacer-medium;
+			@include span(6);
+		}
+
+		@include bp(large) {
+			@include span(3);
+			@include isolate(1);
+		}
+	}
+}

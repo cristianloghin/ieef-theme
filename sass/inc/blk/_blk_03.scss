@@ -1,0 +1,40 @@
+.blk_03 {
+	margin-top: $section-spacer;
+
+	@include bp(large) {
+		padding: 0 40px;
+	}
+
+	@include bp(medium) {
+		margin-top: $section-spacer-medium;
+		.container {
+			padding: 0 56px;
+		}
+	}
+
+	@include bp(large) {
+		.container {
+			padding: 0;
+			> div {
+				display: table;
+				height: 100%;
+				.mod_04 {
+					display: table-cell;
+					padding: 0 $gutter-large / 2;
+					width: 33.333333%;
+					height: 100%;
+					vertical-align: top;
+				}
+			}	
+		}
+	}
+	.mod_04 + .mod_04 {
+		margin-top: $block-spacer;
+		@include bp(medium) {
+			margin-top: $block-spacer-medium;
+		}
+		@include bp(large) {
+			margin-top: 0;
+		}
+	}
+}

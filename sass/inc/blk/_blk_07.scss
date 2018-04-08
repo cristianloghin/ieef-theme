@@ -1,0 +1,9 @@
+.blk_07 {
+	@include bp(medium) {
+		
+	}
+
+	@include bp(large) {
+		padding: 0 40px;
+	}
+}

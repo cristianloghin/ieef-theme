@@ -1,0 +1,56 @@
+.mod_10 {
+	
+	border-top: 1px solid white;
+	padding: 16px 16px 0 16px;
+
+	@include bp(medium) {
+		border-top: none;
+		padding: 0 16px;
+
+		> div {
+			border-top: 1px solid white;
+			padding-top: $block-spacer-medium;
+		}
+	}
+
+	@include bp(large) {
+		@include span(10);
+		@include isolate(1);
+	}
+
+	h3 + p {
+		margin-top: $h2-spacer;
+	}
+	p + .com_01 {
+		margin-top: $block-spacer;
+
+		@include bp(medium) {
+			display: inline-block;
+			> div {
+				> a {
+					padding: 13px 16px;
+				}
+			}
+		}
+	}
+	& + & {
+		margin-top: 16px;
+		@include bp(medium) {
+			margin-top: $block-spacer-medium;
+		}
+	}
+	&:last-child {
+		border-bottom: 1px solid white;
+		padding-bottom: 16px;
+		@include bp(medium) {
+
+			border-bottom: none;
+			padding-bottom: 0;
+
+			> div {
+				border-bottom: 1px solid white;
+				padding-bottom: $block-spacer-medium;
+			}
+		}
+	}
+}

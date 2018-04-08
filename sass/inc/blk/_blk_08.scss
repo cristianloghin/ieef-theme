@@ -1,0 +1,75 @@
+.blk_08 {
+	.message {
+
+		height: 0;
+		overflow: hidden;
+
+		@include bp(medium) {
+			@include span(8);
+			@include isolate(2);
+		}
+
+		@include bp(large) {
+			@include span(6);
+			@include isolate(3);
+		}
+
+		> div {
+			
+			visibility: hidden;
+			opacity: 0;
+		
+			background-color: $grey1;
+			padding: 16px;
+
+			@include shadow-down;
+			@include transition(.7s);
+
+			@include bp(large) {
+				padding: 32px;
+			}
+
+			p {
+				padding-bottom: 16px;
+				color: white;
+
+			}
+			.com_01, .com_02 {
+				@include bp(large) {
+					width: 50%;
+					margin: 0 auto;
+				}
+			}
+			.com_01 {
+
+				a {
+
+					border-color: $grey3;
+					
+					span:first-child {
+						color: white;
+					}
+					span:last-child {
+						color: $grey2;
+					}
+
+					&:hover {
+						border-color: $green1;
+						span {
+							color: white;
+						}
+					}
+				}
+			}
+		}
+
+		&.show {
+			height: auto;
+			> div {
+				visibility: visible;
+				opacity: 1;
+				margin-top: 32px;
+			}
+		}
+	}
+}

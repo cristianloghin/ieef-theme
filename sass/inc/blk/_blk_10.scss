@@ -1,0 +1,29 @@
+.blk_10 {
+
+	padding-top: $section-spacer;
+
+	@include bp(medium) {
+		padding-top: $section-spacer-medium;
+	}
+
+	@include bp(large) {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+	.row {
+		
+		@include bp(large) {
+			display: table;
+			height: 100%;
+		}
+
+		& + .row {
+			
+			margin-top: 16px;
+			@include bp(medium) {
+				margin-top: 24px;
+			}
+		}
+	}
+}

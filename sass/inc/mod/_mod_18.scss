@@ -1,0 +1,111 @@
+.mod_18 {
+	padding-bottom: 16px;
+
+	@include bp(large) {
+		padding: 0 40px;
+		padding-bottom: $block-spacer-medium;
+	}
+
+	.container {
+		> div {
+
+			position: relative;
+
+			> div {
+				padding: 0 16px;
+				position: relative;
+
+				
+
+				@include bp(large) {
+					@include span(10);
+					@include isolate(1);
+				}
+
+				.slider {
+					width: 100%;
+					overflow: hidden;
+					position: relative;
+					cursor: pointer;
+					
+					@include transition(.5s);
+					@include shadow-down;
+					
+					@include bp(large) {
+						margin-top: $block-spacer-medium;
+					}
+
+					.slider-wrapper {
+						width: 100%;
+						white-space: nowrap;
+						font-size: 0;
+						.slide {
+							width: 100%;
+							display: inline-block;
+							vertical-align: top;
+							position: relative;
+							white-space: normal;
+
+							border: 4px solid white;
+
+							img {
+								width: 100%;
+								display: block;
+							}
+						}
+					}
+					.slider-wrapper.transition {
+						@include transition(.5s);
+					}
+				}
+				.slider-controls {
+					width: 100%;
+					padding-top: 16px;
+					text-align: center;
+					clear: both;
+					.pag-button {
+						cursor: pointer;
+						color: $grey1;
+					}
+				}
+			}
+			
+		}
+		
+	}
+}
+
+.mod_17 + .mod_18  {
+
+	@include bp(large) {
+		margin-top: 24px;
+	}
+
+	.container {
+		> div {
+
+			 @include bp(large) {
+				&:before {
+					content: '';
+					display: block;
+					width: calc(100% - 16px);
+					height: 1px;
+					position: absolute;
+					left: 8px;
+					top: 0;
+					background-color: white;
+				}
+			}
+
+			> div {
+				margin-top: $block-spacer;
+				@include bp(medium) {
+					margin-top: $block-spacer-medium;
+				}
+				@include bp(large) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}

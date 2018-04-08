@@ -1,0 +1,7 @@
+#page-investors {
+	@include bp(medium) {
+		.mod_05 .container ul li {
+			width: 25%;
+		}
+	}
+}

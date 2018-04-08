@@ -1,0 +1,85 @@
+.mod_17 {
+
+	@include bp(large) {
+		padding: 0 40px;
+	}
+
+	.container {
+		> div {
+			> div {
+				padding: 0 16px;
+				@include bp(large) {
+					@include span(10);
+					@include isolate(1);
+				}
+				ul {
+					li {
+						font-family: 'Roboto', sans-serif;
+						font-size: 14px;
+						line-height: 18px;
+						color: $grey1;
+						font-weight: 300;
+						padding-left: 12px;
+
+						@include bp(medium) {
+							font-size: 16px;
+							line-height: 20px;
+						}
+
+						&:before {
+							content: '\e802';
+							display: inline-block;
+							font-family: "icons-ieef";
+							font-style: normal;
+							font-weight: normal;
+							margin-left: -12px;
+							margin-right: 7px;
+							color: $green1;
+						} 
+					}
+				}
+				p + ul, h3 + p, h3 + ul {
+					margin-top: 8px;
+				}
+				ul + h3, p + h3 {
+					margin-top: 16px;
+				}
+			}
+		}
+	}
+}
+
+.mod_17 + .mod_17, {
+	.container {
+		> div {
+			> div {
+				border-top: 1px solid white;
+				padding-top: $block-spacer;
+				margin-top: $block-spacer;
+				@include bp(medium) {
+					padding-top: $block-spacer-medium;
+					margin-top: $block-spacer-medium;
+				}
+				@include bp(large) {
+
+				}
+			}
+ 		}
+	}
+}
+
+.mod_18 + .mod_17, .mod_19 + .mod_17  {
+	.container {
+		> div {
+			> div {
+				margin-top: $block-spacer;
+				@include bp(medium) {
+					margin-top: $block-spacer-medium;
+				}
+				@include bp(large) {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}

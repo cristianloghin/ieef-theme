@@ -1,0 +1,104 @@
+#post-cases {
+	section:first-child {
+		margin-top: $section-spacer;
+		@include bp(medium) {
+			margin-top: $section-spacer-medium;
+		}
+	}
+	.mod_17 + .case_links {
+		margin-top: $section-spacer;
+		@include bp(medium) {
+			margin-top: $section-spacer-medium;
+		}
+	}
+	.case_links {
+
+		@include bp(medium) {
+			padding: 0 16px;
+		}
+
+		@include bp(large) {
+			padding: 0 40px;
+		}
+
+		> .container {
+			> div {
+				border-top: 1px solid $grey2;
+				padding: 16px 16px 0 16px;
+				position: relative;
+
+				@include bp(medium) {
+					padding: 24px 0 0 0;
+				}
+
+				@include bp(large) {
+					border-top: none;
+					&:before {
+						content: '';
+						display: block;
+						width: calc(100% - 16px);
+						height: 1px;
+						position: absolute;
+						top: 0;
+						background-color: $grey2;
+						left: 8px;
+					}
+				}
+
+				.com_03 {
+					@include bp(medium) {
+						width: calc(50% - 16px);
+					}
+
+					@include bp(large) {
+						@include span(3);
+					}
+				}
+				.com_03 + div {
+					margin-top: 24px;
+
+					@include bp(large) {
+						float: right;
+						padding-right: 8px;
+						margin-top: 0;
+					}
+
+					h3 {
+						@include bp(large) {
+							line-height: 48px;
+							float: left;
+							padding-right: 16px;
+						}
+					}
+
+					.com_01 {
+						margin-top: 16px;
+						@include bp(medium) {
+							width: calc(50% - 16px);
+							float: left;
+						}
+						@include bp(large) {
+							width: auto;
+							float: left;
+							margin-top: 0;
+						}
+						> div a {
+							@include bp(large) {
+								padding-left: 16px;
+								padding-right: 8px;
+							}
+						}
+					}
+					.com_01 + .com_01 {
+						@include bp(medium) {
+							margin-left: 32px;
+						}
+						@include bp(large) {
+							margin-left: 16px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

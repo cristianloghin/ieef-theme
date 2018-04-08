@@ -1,0 +1,250 @@
+.mod_08 {
+
+	@include bp(large) {
+		padding: 0 40px;
+	}
+
+	ul {
+		
+		@include bp(large) {
+			@include span(10);
+			@include isolate(1);
+		}
+
+		.row {
+			
+			@include bp(medium) {
+				padding: 0 16px;
+			}
+			@include bp(large) {
+				padding: 0;
+				display: table;
+				height: 100%;
+				width: 100%;
+			}
+
+			li {
+
+				@include bp(large) {
+					
+					width: 50%;
+					padding-right: 8px;
+					
+					display: table-cell;
+					height: 100%;
+					vertical-align: top;
+				}
+
+				> div {
+					
+					border-bottom: 1px solid white;
+					width: 100%;
+					height: 100%;
+					padding: 0 16px;
+					display: inline-block;
+
+					@include bp(medium) {
+						padding: 0;
+					}
+
+					span {
+						display: block;
+						color: $green1;
+						background: white;
+						float: left;
+
+						text-align: center;
+
+						@include shadow-down;
+						margin-left: -3px;
+					}
+				}
+			}
+			li + li {
+				@include bp(large) {
+					padding-right: 0;
+					padding-left: 8px;
+				}
+			}
+			&:first-child {
+				li:first-child {
+					> div {
+						border-top: 1px solid white;
+					}
+				}
+				@include bp(large) {
+					li:last-child {
+						> div {
+							border-top: 1px solid white;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	ul.simple_list {
+		.row {
+			li {
+				> div {
+					span {
+						width: 24px;
+						height: 24px;
+						font-size: 18px;
+						line-height: 24px;
+
+						margin-top: 13px;
+						
+						@include border-radius(12px);
+
+						@include bp(medium) {
+							margin-top: 21px;
+						}
+
+						@include bp(large) {
+							margin-top: 21px;
+						}
+						
+					}
+					p {
+						padding-left: 32px;
+						padding-top: $block-spacer;
+						padding-bottom: $block-spacer;
+						@include bp(medium) {
+							padding-top: $block-spacer-medium;
+							padding-bottom: $block-spacer-medium;
+						}
+					}
+				}
+			}
+		}	
+	}
+
+	ul.numbered_list {
+		.row {
+			li {
+				> div {
+
+					span {
+					
+						width: 24px;
+						height: 24px;
+						font-size: 16px;
+						line-height: 24px;
+						
+						font-family: 'Roboto Slab', serif;
+						font-weight: 300;
+
+						margin-top: 13px;
+
+						@include border-radius(12px);
+
+						@include bp(medium) {
+							width: 48px;
+							height: 48px;
+							font-size: 24px;
+							line-height: 48px;
+
+							@include border-radius(24px);
+
+							margin-top: 21px;
+							margin-left: -3px;
+						}
+
+						@include bp(large) {
+							margin-top: 18px;
+						}
+					}
+					h3, p {
+						padding-left: 32px;
+						@include bp(medium) {
+							padding-left: 56px;
+						}
+					}
+					h3 {
+						padding-top: $block-spacer;
+						@include bp(medium) {
+							padding-top: $block-spacer-medium;
+						}
+					}
+					p {
+						padding-bottom: $block-spacer;
+						@include bp(medium) {
+							padding-bottom: $block-spacer-medium;
+						}
+					}
+				}
+			}
+		}
+	}
+	ul.big_blocks {
+
+		@include bp(large) {
+			padding: 0;
+		}
+
+		.row {
+			li {
+				@include bp(large) {
+					width: 25%;
+					padding: 0 8px;
+				}
+				> div {
+					
+					@include bp(large) {
+						border: none;
+						background: white;
+
+						@include shadow-down;
+						@include transition(.3s);
+
+						&:hover {
+							background: $grey1;
+						}
+					}
+
+					span {
+						width: 24px;
+						height: 24px;
+						font-size: 18px;
+						line-height: 24px;
+
+						margin-top: 13px;
+						
+						@include border-radius(12px);
+
+						@include bp(medium) {
+							margin-top: 21px;
+						}
+
+						@include bp(large) {
+							display: none;
+						}
+						
+					}
+					p {
+						padding-left: 32px;
+						padding-top: $block-spacer;
+						padding-bottom: $block-spacer;
+						@include bp(medium) {
+							padding-top: $block-spacer-medium;
+							padding-bottom: $block-spacer-medium;
+						}
+						@include bp(large) {
+							padding: 24px;
+							font-size: 20px;
+							line-height: 24px;
+							color: $green1;
+						}
+					}
+				}
+			}
+		}
+
+		.row + .row {
+			@include bp(large) {
+				margin-top: 16px;
+			}
+		}
+	}
+}

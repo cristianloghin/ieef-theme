@@ -1,0 +1,22 @@
+#page-home {
+	#actionButton {
+		margin-top: $section-spacer;
+		padding: 0 16px;
+		@include bp(medium) {
+			margin-top: $section-spacer-medium;
+
+			.container > div {
+				@include span(6);
+				@include isolate(3);
+			}
+		}
+
+		@include bp(large) {
+			padding: 0 40px;
+			.container > div {
+				@include span(4);
+				@include isolate(4);
+			}
+		}
+	}
+}

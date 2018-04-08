@@ -1,0 +1,207 @@
+.mod_07 {
+
+	@include bp(medium) {
+		display: table-cell;
+		width: 50%;
+		height: 100%;
+		padding: 0 16px;
+		vertical-align: top;
+	}
+
+	@include bp(large) {
+		padding: 0 8px 0 0;
+
+		& + & {
+			padding: 0 0 0 8px;
+		}
+	}
+
+	> div {
+		
+		background: white;
+
+		@include shadow-down;
+
+		@include bp(medium) {
+			height: 100%;
+			position: relative;
+
+			&.photo_top {
+				.text {
+					padding-top: 208px;
+				}
+			}
+			&.clear_top {
+				.text {
+					padding-top: 16px;
+				}
+			}
+			&.one_bottom {
+				.text {
+					padding-bottom: 72px;
+				}
+				
+			}
+			&.two_bottom {
+				.text {
+					padding-bottom: 96px;
+				}
+			}
+			&.clear_bottom {
+				.text {
+					padding-bottom: 16px;
+				}
+			}
+		}
+
+		@include bp(large) {
+			&.photo_top {
+				.text {
+					padding-top: 256px;
+				}
+			}
+		}
+
+		.photo {
+			height: 176px;
+			width: 100%;
+
+			@include bp(medium) {
+				height: 192px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 2;
+			}
+
+			@include bp(large) {
+				height: 240px;
+			}
+			span {
+				display: block;
+				width: 100%;
+				height: 100%;
+				background-repeat: no-repeat;
+				background-position: center;
+				@include background-size(cover);
+			}
+		}
+
+		.text {
+			padding: $block-spacer;
+
+			@include bp(medium) {
+				padding-left: 16px;
+				padding-right: 16px;
+			}
+
+			.position {
+				color: $blue1;
+				margin-bottom: $h2-spacer;
+			}
+		}
+
+		.contact {
+			
+			border-top: 1px solid $grey4;
+
+			padding: $block-spacer;
+			height: 48px + 2 * $block-spacer;
+
+			@include bp(medium) {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+			}
+
+			div {
+				
+				float: left;
+				width: 50%;
+
+				padding: 0 8px;
+
+				@include bp(medium) {
+					float: none;
+					width: 100%;
+					padding: 0;
+				}
+
+				> span {
+					display: none;
+
+					@include bp(medium) {
+						display: inline;
+						font-family: 'Roboto', sans-serif;
+						font-size: 14px;
+						line-height: 24px;
+						font-weight: 400;
+						color: $grey1;
+					}
+				}
+				a {
+					text-decoration: none;
+
+					span:first-child {
+						display: block;
+						width: 48px;
+						height: 48px;
+
+						text-align: center;
+						color: white;
+						line-height: 48px;
+						font-size: 24px;
+
+						@include border-radius(24px);
+
+						@include shadow-in;
+
+						@include bp(medium) {
+							display: none;
+						}
+
+					}
+					span:last-child {
+						display: none;
+						@include bp(medium) {
+							display: inline-block;
+							font-family: 'Roboto', sans-serif;
+							font-size: 14px;
+							line-height: 24px;
+							font-weight: 400;
+						}
+					}
+				}
+			}
+			.email {
+				a {
+					span:first-child {
+						float: right;
+						background-color: $blue1;
+					}
+					span:last-child {
+						@include bp(medium) {
+							color: $blue1;
+						}
+					}
+				}
+			}
+			.phone {
+				a {
+					span:first-child {
+						background-color: $green1;
+					}
+					span:last-child {
+						@include bp(medium) {
+							color: $green1;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	& + .mod_07 {
+		margin-top: $block-spacer;
+	}
+}

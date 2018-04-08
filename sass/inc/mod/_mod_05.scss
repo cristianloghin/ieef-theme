@@ -1,0 +1,107 @@
+.mod_05 {
+	display: none;
+
+	margin-top: -32px;
+	padding-top: 56px;
+	padding-bottom: 24px;
+	background: $grey1;
+
+	@include bp(medium) {
+		display: block;
+		
+	}
+
+	@include bp(large) {
+		margin-top: -64px;
+		padding-top: 96px;
+		padding-bottom: 32px;
+	}
+
+	.container {
+		
+		ul {
+			width: 100%;
+			padding: 0 16px;
+
+			display: table;
+
+			@include bp(large) {
+				display: block;
+				text-align: center;
+			}
+
+			li {
+				display: table-cell;
+				text-align: center;
+				vertical-align: middle;
+
+				padding: 0 16px;
+
+				position: relative;
+
+				@include bp(large) {
+					display: inline-block;
+					width: auto !important;
+				}
+
+				a {
+					color: $green1;
+					text-decoration: none;
+					font-family: 'Roboto Slab', serif;
+					font-size: 18px;
+					line-height: 24px;
+					font-weight: 300;
+					@include bp(large) {
+						font-size: 20px;
+						line-height: 32px;
+					}
+				}
+				span {
+
+					display: none;
+
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 18px 16px 0 16px;
+					border-color: $grey1 transparent transparent transparent;
+
+					position: absolute;
+					bottom: -42px;
+					left: 50%;
+					margin-left: -16px;
+
+					@include bp(large) {
+						bottom: -50px;
+					}
+				}
+			}
+
+			li + li {
+				border-left: 1px solid $grey3;
+			}
+
+			li.active {
+				a {
+					color: white;
+				}
+				span {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.content_wrapper.sticky {
+	@include bp(medium) {
+		padding-top: 104px;
+		.mod_05 {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 3;
+		}
+	}
+}

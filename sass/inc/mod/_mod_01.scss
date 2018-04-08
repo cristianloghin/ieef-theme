@@ -1,0 +1,314 @@
+header {
+	.mod_01 {
+	
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		width: 100%;
+		height: 100%;
+
+		pointer-events: none;
+
+		@include bp(large) {
+			position: relative;
+			height: auto;
+			padding: 40px $gutter-large/2 0 $gutter-large/2;
+
+			pointer-events: auto;
+		}
+
+		> div {
+
+			position: absolute;
+			width: 75%;
+			height: 100%;
+			background: white;
+			top: 0;
+			right: 0;
+
+			margin-right: -100%;
+
+			z-index: 15;
+
+			@include transition(.6s);
+			@include box-shadow(rgba(0, 0, 0, .3) -2px 0px 0px);
+
+			@include bp(medium) {
+				@include box-sizing(content-box);
+				width: 50%;
+				padding-left: 16px;
+			}
+
+			@include bp(large) {
+				@include box-sizing(border-box);
+				width: 100%;
+				padding: 0;
+				position: relative;
+
+				margin-right: 0;
+
+				@include shadow_down;
+			}
+
+			> div {
+				background: $blue1;
+				width: 100%;
+				height: 48px;
+
+				@include bp(medium) {
+					height: 72px;
+					padding-top: 40px;
+					margin-left: -16px;
+					padding-left: 16px;
+					@include box-sizing(content-box);
+
+				}
+
+				@include bp(large) {
+					display: none;
+				}
+
+				h2 {
+					float: left;
+					color: white;
+					line-height: 48px;
+					padding-left: 16px;
+					text-align: left !important;
+					margin: 0 !important;
+
+					@include bp(medium) {
+						line-height: 72px;
+					}
+				}
+
+				#menuClose {
+
+					width: 48px;
+					height: 48px;
+					float: right;
+					background-color: white;
+
+					cursor: pointer;
+
+					@include bp(medium) {
+						width: 72px;
+						height: 72px;
+						margin-right: 56px;
+					}
+
+					span {
+						width: 100%;
+						height: 100%;
+						font-size: 24px;
+						display: block;
+						text-align: center;
+						line-height: 48px;
+						color: $blue1;
+						@include bp(medium) {
+							font-size: 36px;
+							line-height: 72px;
+						}
+					}
+				}
+			}
+
+			ul {
+
+				@include bp(medium) {
+					@include box-sizing(content-box);
+					width: 100%;
+					margin-left: -16px;
+					padding-left: 16px;
+				}
+
+				@include bp(large) {
+					@include box-sizing(border-box);
+					margin-left: 0;
+					padding-left: 0;
+					text-align: center;
+					@include display-flex;
+					@include justify-content(space-around);
+				}
+
+				li {
+					border-bottom: 1px solid $grey4;
+					padding: 0 16px;
+					position: relative;
+
+					@include bp(medium) {
+						margin-left: -16px;
+					}
+
+					@include bp(large) {
+						@include flex(1 1 auto);
+						display: inline-block;
+						border-bottom: none;
+						padding: 0;
+						margin-left: 0;
+					}
+
+					a {
+						text-decoration: none;
+						font-family: 'Roboto', sans-serif;
+						font-weight: 300;
+						color: $grey1;
+						text-transform: uppercase;
+						line-height: 47px;
+						font-size: 16px;
+
+						@include bp(medium) {
+							padding-left: 16px;
+							line-height: 63px;
+							font-size: 18px;
+						}
+						@include bp(large) {
+							padding-left: 0;
+							line-height: 64px;
+							font-size: 14px;
+							font-weight: 400;
+						}
+					}
+				}
+				li:last-child {
+					border-bottom: none;
+					a {
+						line-height: 48px;
+						@include bp(medium) {
+							line-height: 64px;
+						}
+					}
+				}
+				li + li {
+					@include bp(large) {
+						&:before {
+							content: '';
+							display: block;
+							width: 1px;
+							height: 32px;
+							position: absolute;
+							left: 0;
+							top: 16px;
+							background: $grey4;
+						}
+					}
+				}
+				li.active {
+					a {
+						color: $green1;
+					}
+				}
+			}			
+		}
+
+		> span:last-child {
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: black;
+
+			opacity: 0;
+
+			@include transition(.3s);
+
+			@include bp(large) {
+				display: none;
+			}
+		}
+
+		&.open {
+			
+			pointer-events: auto;
+			
+			> div {
+				@include force_h_render;
+				margin-right: 0;
+			}
+
+			> span:last-child {
+				opacity: .3;
+			}
+		}
+	}
+}
+
+footer {
+	.mod_01 {
+
+		@include bp(medium) {
+			@include span(6);
+		}
+
+		@include bp(large) {
+			@include span(8);
+		}
+
+		> div {
+			> div {
+				display: none;
+			}
+			ul {
+				padding-bottom: 20px;
+
+				@include bp(medium) {
+					padding-bottom: 0;
+				}
+
+				@include bp(large) {
+					@include clear_fix;
+				}
+
+				li {
+					border-bottom: 1px solid $grey4;
+					text-align: center;
+
+					@include bp(medium) {
+						border: none;
+						text-align: left;
+					}
+
+					@include bp(large) {
+						float: left;
+						display: block;
+						width: 30%;
+
+
+						&:nth-child(3n + 2) {
+							width: 20%;
+						}
+
+						&:nth-child(3n + 3) {
+							padding-left: 8px;
+						}
+					}
+
+					a {
+						text-decoration: none;
+						font-family: 'Roboto', sans-serif;
+						font-weight: 300;
+						color: $grey3;
+						text-transform: uppercase;
+						line-height: 47px;
+						font-size: 16px;
+						@include bp(medium) {
+							line-height: 24px;
+							font-size: 14px;
+						}
+					}
+				}
+				li:last-child {
+					border-bottom: none;
+					a {
+						line-height: 48px;
+						@include bp(medium) {
+							line-height: 24px;
+						}
+					}
+				}
+			}
+		}
+		> span:last-child {
+			display: none;
+		}
+	}
+}

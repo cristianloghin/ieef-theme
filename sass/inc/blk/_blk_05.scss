@@ -1,0 +1,28 @@
+.blk_05 {
+
+	.row + .row {
+		margin-top: $block-spacer;
+	}
+
+	@include bp(medium) {
+		.row {
+			display: table;
+			height: 100%;
+			width: 100%;
+		}
+		.row + .row {
+			margin-top: 32px;
+		}
+	}
+
+	@include bp(large) {
+		padding: 0 40px;
+		.row {
+			@include span(10);
+			@include isolate(1);
+		}
+		.row + .row {
+			margin-top: 16px;
+		}
+	}
+}
